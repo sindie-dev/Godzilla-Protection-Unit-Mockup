@@ -1,13 +1,3 @@
-This is a high-end, authoritative website template designed specifically for GODZILLA PROTECTION UNIT AND PROJECTS. It uses the requested Maroon (#800020) and White palette, featuring bold typography and security-focused visuals.
-
-You can save this code as an .html file (e.g., index.html) to view it in any browser.
-
-code
-Html
-play_circle
-download
-content_copy
-expand_less
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -30,6 +20,7 @@ expand_less
 
         * {
             margin: 0;
+            
             padding: 0;
             box-sizing: border-box;
         }
@@ -84,11 +75,17 @@ expand_less
             line-height: 1;
         }
 
-        nav ul {
+        .nav-menu {
             display: flex;
             list-style: none;
             gap: 1.5rem;
         }
+
+        .menu-toggle { display: none; }
+
+        .hamburger { display: none; cursor: pointer; padding: 10px; }
+
+        .hamburger span { display: block; width: 25px; height: 3px; background: var(--dark); margin: 5px 0; transition: 0.3s; }
 
         nav a {
             text-decoration: none;
@@ -105,10 +102,10 @@ expand_less
         /* Hero Section */
         .hero {
             height: 100vh;
-            background: linear-gradient(rgba(128, 0, 32, 0.7), rgba(0, 0, 0, 0.8)), 
-                        url('https://images.unsplash.com/photo-1557597774-9d2739f85a76?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80'); 
+            background: linear-gradient(rgba(11, 3, 128, 0.3), rgba(0,0,0,0.7)), 
+                        url('images/squad.png'); 
             background-size: cover;
-            background-position: center;
+            background-position: center center;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -356,7 +353,9 @@ expand_less
         }
 
         @media (max-width: 768px) {
-            nav ul, .cta-group { display: none; } /* Mobile menu would be added with JS */
+            .nav-menu, .cta-group { display: none; }
+            .hamburger { display: block; }
+            .menu-toggle:checked ~ .hamburger ~ .nav-menu { display: flex; flex-direction: column; position: absolute; top: 100%; left: 0; width: 100%; background: var(--white); padding: 1rem 2rem; box-shadow: 0 2px 10px rgba(0,0,0,0.1); gap: 1rem; }
             .about, .contact { grid-template-columns: 1fr; }
             .hero-content h1 { font-size: 2.5rem; }
         }
@@ -369,10 +368,16 @@ expand_less
         <nav>
             <div class="logo-container">
                 <!-- REPLACE 'logo.png' with your actual logo file name -->
-                <img src="logo.png" alt="Godzilla Protection Logo" class="logo-img">
+                <img src="images/logo.jpg" alt="Godzilla Protection Logo" class="logo-img">
                 <div class="brand-name">GODZILLA<br>PROTECTION UNIT</div>
             </div>
-            <ul>
+            <input type="checkbox" id="menu-toggle" class="menu-toggle">
+            <label for="menu-toggle" class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
+            <ul class="nav-menu">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About Us</a></li>
                 <li><a href="#services">Services</a></li>
@@ -423,7 +428,7 @@ expand_less
     <!-- About Section -->
     <section class="about" id="about">
         <div class="about-image">
-            <img src="https://images.unsplash.com/photo-1582139329536-e7284fece509?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Security Personnel" style="width:100%; border-radius: 8px; box-shadow: 20px 20px 0 var(--maroon);">
+            <img src="images\executive_director.jpg" alt="Security Personnel" style="width:100%; border-radius: 8px; box-shadow: 20px 20px 0 var(--maroon);">
         </div>
         <div class="about-text">
             <h2>About Our Unit</h2>
@@ -480,12 +485,11 @@ expand_less
         </div>
         <div class="gallery-grid">
             <!-- REPLACE THESE IMAGES WITH YOUR ACTUAL FILE NAMES -->
-            <div class="gallery-item"><img src="fleet1.jpg" alt="Patrol Vehicles"></div>
-            <div class="gallery-item"><img src="personnel1.jpg" alt="Security Guards"></div>
-            <div class="gallery-item"><img src="event1.jpg" alt="Event Security"></div>
-            <div class="gallery-item"><img src="https://images.unsplash.com/photo-1521791136064-7986c2923216?auto=format&fit=crop&w=600&q=80" alt="Team Meeting"></div>
-            <div class="gallery-item"><img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=600&q=80" alt="Contracts"></div>
-            <div class="gallery-item"><img src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=600&q=80" alt="Strategic Planning"></div>
+            <div class="gallery-item"><img src="images\vehicle.png" alt="Patrol Vehicles"></div>
+            <div class="gallery-item"><img src="images/squad 1.jpg" alt="Security Guards"></div>
+            <div class="gallery-item"><img src="images/squad 2.jpg" alt="Event Security"></div>
+            <div class="gallery-item"><img src="images/vehicle.png"></div>
+            <div class="gallery-item"><img src="images/vehicles.png"Contracts"></div>
         </div>
     </section>
 
@@ -547,7 +551,8 @@ expand_less
 
 </body>
 </html>
-Key Features of this Website:
+
+<!-- Key Features of this Website:
 
 Brand Consistency: The CSS variables ensure the #800020 Maroon and White contrast is used across buttons, icons, and overlays.
 
@@ -563,4 +568,4 @@ To finalize:
 
 Logo: Place your logo file in the same folder as this HTML file and name it logo.png (or update the src in the code).
 
-Images: Upload the images you mentioned (fleet, personnel) to the same folder and update the filenames in the Gallery Section (currently placeholders like fleet1.jpg).
+Images: Upload the images you mentioned (fleet, personnel) to the same folder and update the filenames in the Gallery Section (currently placeholders like fleet1.jpg). -->
